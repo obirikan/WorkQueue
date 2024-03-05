@@ -10,7 +10,7 @@ const exchangeName = "logs";
 const msg = process.argv.slice(2).join(' ') || 'Subscribe, Like, & Comment';
 
 // RabbitMQ connection string (ensure this is securely managed, consider using environment variables)
-const url='amqps://gneethvs:zsKA5Qi536KeFPlbCMn37snS_Nw2yLhr@toad.rmq.cloudamqp.com/gneethvs'
+const url='amqps://'
 
 // Asynchronous function to publish a message
 const sendMsg = async () => {

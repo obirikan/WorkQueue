@@ -5,7 +5,7 @@ const amqplib = require('amqplib');
 const exchangeName = "logs";
 
 // RabbitMQ connection string (should be kept secure, possibly in environment variables)
-const url='amqps://gneethvs:zsKA5Qi536KeFPlbCMn37snS_Nw2yLhr@toad.rmq.cloudamqp.com/gneethvs'
+const url='amqps://'
 
 // Asynchronous function to receive messages for the first consumer
 const recieveMsg = async () => {
