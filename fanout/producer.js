@@ -25,7 +25,7 @@ const sendMsg = async () => {
   
   // Publish the message to the exchange with an empty routing key, meaning it will go to all queues
   channel.publish(exchangeName, '', Buffer.from(msg));
-  console.log('Sent: ', msg);
+  console.log('Sent:', msg);
   
   // Close the connection after a short delay to ensure the message is sent
   setTimeout(() => {
