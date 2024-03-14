@@ -44,7 +44,7 @@ const recieveMsg2= async () => {
     console.log(`Waiting for messages in consumer 2 queue: ${q.queue}`);
     // Bind the queue to the exchange with no specific routing key
     channel.bindQueue(q.queue, exchangeName, '');
-    // Start consuming messages from the queue without acknowledgments
+    // Start consuming messages from the queue without  acknowledgments
     channel.consume(q.queue, msg => {
       if(msg.content) console.log("consuming 2: ", msg.content.toString());
     }, {noAck: true})
