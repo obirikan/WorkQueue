@@ -36,14 +36,18 @@ const recieveMsg2= async () => {
     const connection = await amqplib.connect(url);
     // Create a communication channel
     const channel = await connection.createChannel();
+
     // Assert that the exchange exists with type 'fanout' and it's not durable
     await channel.assertExchange(exchangeName, 'fanout', {durable: false});
+
     // Assert a queue with a generated name that is exclusive to this connection
     const q = await channel.assertQueue('', {exclusive: true});
     
     console.log(`Waiting for messages in consumer 2 queue: ${q.queue}`);
+    
     // Bind the queue to the exchange with no specific routing key
     channel.bindQueue(q.queue, exchangeName, '');
+
     // Start consuming messages from the queue without  acknowledgments
     channel.consume(q.queue, msg => {
       if(msg.content) console.log("consuming 2: ", msg.content.toString());
