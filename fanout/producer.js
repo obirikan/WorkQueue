@@ -7,7 +7,7 @@ require('dotenv').config()
 const exchangeName = "logs";
 
 // Construct the message from command line arguments or use a default message if none are provided
-const msg = process.argv.slice(2).join(' ') || 'Subscribe, Like, & Comment';
+const msg = process.argv.slice(2).join(' ') || 'Subscribe, Like, & Comment || share';
 
 // RabbitMQ connection string (ensure this is securely managed, consider using environment variables)
 const url='amqps://'
